@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "AVIOX - Premium Futuristic Student Career Platform",
   "scripts": {
+    "start": "npm start --prefix server",
     "client": "npm run dev --prefix client",
     "server": "npm run dev --prefix server",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "install-all": "npm install && npm install --prefix server && npm install --prefix client",
+    "build": "npm run install-all && npm run build --prefix client",
     "seed": "npm run seed --prefix server"
   },
   "devDependencies": {

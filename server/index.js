@@ -24,6 +24,9 @@ const PORT = process.env.PORT || 5000;
 // Connect DB
 connectDB();
 
+// Trust proxy is required for rate limiters to work correctly behind Render/Vercel proxies
+app.set('trust proxy', 1);
+
 // Security middleware
 app.use(helmet());
 app.use(cors({
